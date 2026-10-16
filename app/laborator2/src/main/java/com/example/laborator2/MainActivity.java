@@ -1,9 +1,13 @@
 package com.example.laborator2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -51,4 +55,7 @@ public class MainActivity extends AppCompatActivity {
     // warning, debug, info: Log.e(), Log.w(), Log.d(), Log.i(), Log.v()-asemanator cu info.
     //logurile sunt fisiere cu detalii despre ceea ce s a intamplat
     //cand schimbam in view landscape se apeleaza ondestroy dupa onstart, iar starea trebuie salvata de programator
+
+        //am ramas in urma in deschide activitate
+
 }
