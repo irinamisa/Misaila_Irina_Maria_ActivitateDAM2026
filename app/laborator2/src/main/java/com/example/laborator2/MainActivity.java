@@ -56,6 +56,4 @@ public class MainActivity extends AppCompatActivity {
     //logurile sunt fisiere cu detalii despre ceea ce s a intamplat
     //cand schimbam in view landscape se apeleaza ondestroy dupa onstart, iar starea trebuie salvata de programator
 
-        //am ramas in urma in deschide activitate
-
 }

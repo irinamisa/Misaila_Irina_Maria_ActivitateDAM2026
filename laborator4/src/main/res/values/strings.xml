@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Laborator 4</string>
+    <string name="esti_student">Esti student?</string>
+    <string name="introduceti_numele">introduceti_numele</string>
+    <string name="artist">Artist</string>
+    <string name="titlu_melodie">Titlu melodie</string>
+    <string name="trimite_datele">Trimite datele</string>
+    <string name="introduceti_titlul">Introduceti titlul</string>
+    <string name="introduceti_numele_artistului">Introduceti numele artistului</string>
+    <string name="gen_muzical">Gen Muzical</string>
+    <string name="rock">Rock</string>
+    <string name="pop">Pop</string>
+    <string name="jazz">Jazz</string>
+    <string name="reggae">Reggae</string>
+    <string name="rapp">Rapp</string>
+    <string name="an_lansare">An Lansare</string>
+    <string name="evaluare">Evaluare</string>
+    <string name="este_lansata_oficial">Este lansata oficial?</string>
+    <string name="confirm_datele_transmise">Confirm datele transmise</string>
+    <string name="adauga_melodie">Adauga melodie</string>
+
+    <!--Strings activit ai-->
+    <string name="titlu_activitate">🎵 Melodie nouă</string>
+    <string name="subtitlu_activitate">Completează detaliile și trimite-le</string>
+    <string name="detalii_titlu">Detalii melodie</string>
+    <string name="gen_an_titlu">Gen și an</string>
+    <string name="parere_titlu">Părerea ta</string>
+    <string name="altele">Altele</string>
+    <string name="adauga_melodie_activitate_ai">Adauga melodie activitate AI</string>
+
+</resources>

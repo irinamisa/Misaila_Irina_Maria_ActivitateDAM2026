@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivitateNoua">
+
+    <!--Titlu melodie-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/titlu_melodie"
+        />
+    <EditText
+        android:id="@+id/titlu_ET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/introduceti_titlul"
+        android:inputType="text"
+        />
+    <!--Artist-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/artist"
+        />
+    <EditText
+        android:id="@+id/artist_ET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/introduceti_numele_artistului"
+        android:inputType="text"
+        />
+
+    <!--Gen Muzical-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/gen_muzical"
+        />
+
+    <RadioGroup
+        android:id="@+id/gen_RG"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/rock_RB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rock"
+            />
+        <RadioButton
+            android:id="@+id/pop_RB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pop"
+            />
+        <RadioButton
+            android:id="@+id/jazz_RB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/jazz"
+            />
+        <RadioButton
+            android:id="@+id/reggae_RB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reggae"
+            />
+        <RadioButton
+            android:id="@+id/rapp_RB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rapp"
+            />
+    </RadioGroup>
+
+    <!--Anul lansarii-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/an_lansare"
+        />
+    
+    <Spinner
+        android:id="@+id/an_SP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        />
+
+    <!--Nota-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/evaluare"
+        />
+    <RatingBar
+        android:id="@+id/nota_RB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize="0.5"
+        android:isIndicator="false"
+        />
+
+    <!--Intreb daca e lansata melodia-->
+    <CheckBox
+        android:id="@+id/esteLansata_CB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/este_lansata_oficial"
+        />
+
+    <!--Switch pentru confirmarea datelor-->
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/confirm_SW"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/confirm_datele_transmise"
+        />
+
+    <Button
+        android:id="@+id/trimite_BTN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="trimiteDatele"
+        android:text="@string/trimite_datele"
+        />
+
+
+</LinearLayout>
