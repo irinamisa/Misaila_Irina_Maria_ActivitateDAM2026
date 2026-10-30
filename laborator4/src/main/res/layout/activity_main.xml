@@ -41,5 +41,13 @@
         android:layout_width="match_parent"
         android:layout_height="182dp" />
 
+    <Button
+        android:id="@+id/DeschideLista_BTN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="deschideActivitateLista"
+        android:text="@string/deschide_lista"
+        />
+
 
 </LinearLayout>

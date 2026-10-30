@@ -82,7 +82,7 @@ public class ActivitateNoua extends AppCompatActivity {
         bundle.putString("gen",gen);
         bundle.putInt("an",an);
         bundle.putFloat("nota",nota);
-        bundle.putBoolean("este lansata",esteLansata);
+        bundle.putBoolean("esteLansata",esteLansata);
 
         Intent it=new Intent();
         it.putExtras(bundle);

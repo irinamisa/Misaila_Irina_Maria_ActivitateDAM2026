@@ -3,6 +3,7 @@ package com.example.laborator4;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,10 +16,15 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
     private TextView rezultatTV;
+    public List<Melodie> melodii;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
@@ -29,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         rezultatTV=findViewById(R.id.rezultat_TV);
+        melodii=new ArrayList<>();
     }
 
     public void deschideActivitateNoua(View view) {
@@ -52,10 +59,25 @@ public class MainActivity extends AppCompatActivity {
                         b.getInt("an", 0),
                         b.getFloat("nota", 0),
                         b.getBoolean("esteLansata", false));
-                Toast.makeText(this, m.toString(), Toast.LENGTH_LONG).show();
+                melodii.add(m);
+                //ArrayAdapter<Melodie> adapter=new ArrayAdapter<>(getApplicationContext(),android.R.Layout.simple_list_item_1,melodii);
                 rezultatTV.setText(m.toString());
             }
         }
+    }
+
+    public void deschideActivitateLista(View view)
+    {
+        Intent it=new Intent(this, ActivitateCuListView.class);
+        ArrayList<String> melodiiStr=new ArrayList<>();
+        for(Melodie m:melodii) {
+            melodiiStr.add(m.toString());
+        }
+        Bundle bundle=new Bundle();
+        bundle.putStringArrayList("melodii",melodiiStr);
+
+        it.putExtras(bundle);
+        startActivityForResult(it,52);
     }
 
     public void deschideActivitateAI(View view) {
