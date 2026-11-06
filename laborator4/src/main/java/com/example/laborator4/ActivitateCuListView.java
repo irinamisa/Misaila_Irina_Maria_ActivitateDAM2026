@@ -1,6 +1,7 @@
 package com.example.laborator4;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -28,20 +29,34 @@ public class ActivitateCuListView extends AppCompatActivity {
             return insets;
         });
 
-        Intent it=getIntent();
-        Bundle bundle=it.getExtras();
+        //Intent it=getIntent();
 
-        List<String> melodiiStr=bundle.getStringArrayList("melodii");
+        //Bundle bundle=it.getExtras();
+        //List<String> melodiiStr=bundle.getStringArrayList("melodii");
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, melodiiStr);
+        //ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, melodiiStr);
+        ArrayList<Melodie> melodii=new ArrayList<>();
+        ArrayList<Melodie> lista;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            lista = getIntent().getParcelableArrayListExtra("melodii", Melodie.class);
+        }
+        else {
+            lista = getIntent().getParcelableArrayListExtra("melodii");
+        }
+        if (lista == null) {
+            lista = new ArrayList<>();
+        }
+        final ArrayList<Melodie> melodii = lista;
+
+        MelodieAdapter adapter=new MelodieAdapter(this,melodii,R.layout.activity_list_view_custom_adapter);
         ListView lv = findViewById(R.id.lista1_LV);
         lv.setAdapter(adapter);
 
         lv.setOnItemClickListener((parent, view, position, id) ->
-                Toast.makeText(this, melodiiStr.get(position).toString(), Toast.LENGTH_LONG).show());
+                Toast.makeText(this, melodii.get(position).toString(), Toast.LENGTH_LONG).show());
 
         lv.setOnItemLongClickListener((parent, view, position, id) ->
-        {   melodiiStr.remove(position);
+        {   melodii.remove(position);
             adapter.notifyDataSetChanged();
             return true;});
     }

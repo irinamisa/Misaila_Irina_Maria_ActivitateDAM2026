@@ -69,14 +69,17 @@ public class MainActivity extends AppCompatActivity {
     public void deschideActivitateLista(View view)
     {
         Intent it=new Intent(this, ActivitateCuListView.class);
-        ArrayList<String> melodiiStr=new ArrayList<>();
-        for(Melodie m:melodii) {
-            melodiiStr.add(m.toString());
-        }
-        Bundle bundle=new Bundle();
-        bundle.putStringArrayList("melodii",melodiiStr);
+        //ArrayList<String> melodiiStr=new ArrayList<>();
+//        ArrayList<Melodie> melodii=new ArrayList<>();
+//        for(Melodie m:melodii) {
+//            melodii.add(m);
+//        }
+        //Bundle bundle=new Bundle();
+        //bundle.putStringArrayList("melodii",melodiiStr);
+        //it.putExtras(bundle);
 
-        it.putExtras(bundle);
+        it.putParcelableArrayListExtra("melodii", new ArrayList<>(melodii));
+
         startActivityForResult(it,52);
     }
 
