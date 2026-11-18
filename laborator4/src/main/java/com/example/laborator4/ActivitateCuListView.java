@@ -16,48 +16,48 @@ import androidx.core.view.WindowInsetsCompat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ActivitateCuListView extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_activitate_cu_list_view);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-
-        //Intent it=getIntent();
-
-        //Bundle bundle=it.getExtras();
-        //List<String> melodiiStr=bundle.getStringArrayList("melodii");
-
-        //ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, melodiiStr);
-        ArrayList<Melodie> melodii=new ArrayList<>();
-        ArrayList<Melodie> lista;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            lista = getIntent().getParcelableArrayListExtra("melodii", Melodie.class);
-        }
-        else {
-            lista = getIntent().getParcelableArrayListExtra("melodii");
-        }
-        if (lista == null) {
-            lista = new ArrayList<>();
-        }
-        final ArrayList<Melodie> melodii = lista;
-
-        MelodieAdapter adapter=new MelodieAdapter(this,melodii,R.layout.activity_list_view_custom_adapter);
-        ListView lv = findViewById(R.id.lista1_LV);
-        lv.setAdapter(adapter);
-
-        lv.setOnItemClickListener((parent, view, position, id) ->
-                Toast.makeText(this, melodii.get(position).toString(), Toast.LENGTH_LONG).show());
-
-        lv.setOnItemLongClickListener((parent, view, position, id) ->
-        {   melodii.remove(position);
-            adapter.notifyDataSetChanged();
-            return true;});
-    }
-}
+//public class ActivitateCuListView extends AppCompatActivity {
+//
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        EdgeToEdge.enable(this);
+//        setContentView(R.layout.activity_activitate_cu_list_view);
+//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+//            return insets;
+//        });
+//
+//        //Intent it=getIntent();
+//
+//        //Bundle bundle=it.getExtras();
+//        //List<String> melodiiStr=bundle.getStringArrayList("melodii");
+//
+//        //ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, melodiiStr);
+//        ArrayList<Melodie> melodii;
+//        ArrayList<Melodie> lista;
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+//            lista = getIntent().getParcelableArrayListExtra("melodii", Melodie.class);
+//        }
+//        else {
+//            lista = getIntent().getParcelableArrayListExtra("melodii");
+//        }
+//        if (lista == null) {
+//            lista = new ArrayList<>();
+//        }
+//        final ArrayList<Melodie> melodii = lista;
+//
+//        MelodieAdapter adapter=new MelodieAdapter(this,melodii,R.layout.activity_list_view_custom_adapter);
+//        ListView lv = findViewById(R.id.lista1_LV);
+//        lv.setAdapter(adapter);
+//
+//        lv.setOnItemClickListener((parent, view, position, id) ->
+//                Toast.makeText(this, melodii.get(position).toString(), Toast.LENGTH_LONG).show());
+//
+//        lv.setOnItemLongClickListener((parent, view, position, id) ->
+//        {   melodii.remove(position);
+//            adapter.notifyDataSetChanged();
+//            return true;});
+//    }
+//}
