@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">exercitiu_extra_S9</string>
+    <string name="bun_venit_in_aplicatie">Bun venit in aplicatie!</string>
+    <string name="adauga_un_automobil">Adauga un automobil</string>
+    <string name="formular_de_adaugare_automobil">Formular de adaugare automobil</string>
+    <string name="id_automobil">ID automobil</string>
+    <string name="introdu_id_ul_automobilului">Introdu ID-ul automobilului</string>
+    <string name="marca">Marca</string>
+    <string name="model">Model</string>
+    <string name="introdu_modelul">Introdu modelul</string>
+    <string name="capacitate">Capacitate</string>
+    <string name="introdu_capacitatea">Introdu capacitatea</string>
+    <string name="an_fabricatie">An fabricatie</string>
+    <string name="este_electric">Este electric?</string>
+    <string name="salveaza_automobilul">Salveaza automobilul</string>
+    <string name="afiseaza_automobilele">Afiseaza automobilele</string>
+    <string name="lista_de_automobile">Lista de automobile</string>
+    <string name="intoarce_te_in_meniu">Intoarce-te in meniu</string>
+    <string-array name="marca_auto">
+        <item>BMW</item>
+        <item>Mercedes</item>
+        <item>Audi</item>
+        <item>Dacia</item>
+        <item>Porsche</item>
+        <item>Volkswagen</item>
+    </string-array>
+</resources>
